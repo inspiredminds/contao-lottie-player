@@ -1,6 +1,6 @@
 {
     "name": "inspiredminds/contao-lottie-player",
-    "description": "Contao extension to integrate the Lottie Web Player for Lottie JSON files.",
+    "description": "Contao extension to integrate the Lottie Web Player for Lottie or Telegram Sticker JSON files.",
     "type": "contao-bundle",
     "license": "LGPL-3.0-or-later",
     "homepage": "https://github.com/inspiredminds/contao-lottie-player",
@@ -25,11 +25,10 @@
     "require": {
         "php": "^7.1 || ^8.0",
         "contao/core-bundle": "^4.9",
+        "symfony/config": "^4.4 || ^5.2",
         "symfony/dependency-injection": "^4.4 || ^5.2",
         "symfony/http-foundation": "^4.4 || ^5.2",
-        "symfony/http-kernel": "^4.4 || ^5.2",
-        "symfony/routing": "^4.4 || ^5.2",
-        "symfony/security-core": "^4.4 || ^5.2"
+        "symfony/http-kernel": "^4.4 || ^5.2"
     },
     "autoload": {
         "psr-4": {
