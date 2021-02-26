@@ -1,0 +1,7 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+  <<?= $this->playerType ?>-player <?php foreach ($this->lottie_options as $option): ?><?= $option ?> <?php endforeach ?>src="<?= $this->singleSRC ?>"></<?= $this->playerType ?>-player>
+
+<?php $this->endblock(); ?>

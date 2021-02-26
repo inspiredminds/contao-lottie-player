@@ -1,0 +1,10 @@
+{
+    "name": "contao-lottie-player",
+    "dependencies": {
+        "@lottiefiles/lottie-player": "^0.5.1"
+    },
+    "scripts": {
+        "postupdate": "cp node_modules/@lottiefiles/lottie-player/dist/lottie-player.js src/Resources/public/ && cp node_modules/@lottiefiles/lottie-player/dist/tgs-player.js src/Resources/public/",
+        "postinstall": "cp node_modules/@lottiefiles/lottie-player/dist/lottie-player.js src/Resources/public/ && cp node_modules/@lottiefiles/lottie-player/dist/tgs-player.js src/Resources/public/"
+    }
+}
