@@ -4,4 +4,4 @@
 Contao Lottie Player
 =========================
 
-Contao extension to integrate the [Lottie Web Player](https://lottiefiles.com/web-player) for Lottie or TGS JSON files.
+Contao extension to integrate the [Lottie Web Player](https://lottiefiles.com/web-player) for Lottie or TGS (Telegram Sticker) JSON files.
