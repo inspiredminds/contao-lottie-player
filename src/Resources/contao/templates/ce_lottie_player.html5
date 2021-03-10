@@ -2,6 +2,6 @@
 
 <?php $this->block('content'); ?>
 
-  <<?= $this->playerType ?>-player <?php foreach ($this->lottie_options as $option): ?><?= $option ?> <?php endforeach ?>src="<?= $this->singleSRC ?>"></<?= $this->playerType ?>-player>
+  <<?= $this->playerType ?>-player <?php foreach ($this->lottie_options as $option): ?><?= $option ?> <?php endforeach ?>src="<?= $this->singleSRC ?>"<?= $this->playerStyle ?>></<?= $this->playerType ?>-player>
 
 <?php $this->endblock(); ?>
