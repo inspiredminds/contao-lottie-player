@@ -42,7 +42,7 @@ class LottiePlayerController extends AbstractContentElementController
 
         $playerType = 'json' === $file->extension ? 'lottie' : 'tgs';
         $template->playerType = $playerType;
-        $template->singleSRC = $file->path;
+        $template->singleSRC = '/'.$file->path;
         $template->lottie_options = StringUtil::deserialize($model->lottie_options, true);
 
         if (empty($GLOBALS['TL_HEAD']['lottie-player-script'])) {
