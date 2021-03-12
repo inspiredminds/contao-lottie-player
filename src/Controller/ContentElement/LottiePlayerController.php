@@ -67,7 +67,7 @@ class LottiePlayerController extends AbstractContentElementController
             $template->playerStyle = ' style="width:'.$animation->w.'px;height:'.$animation->h.'px"';
         }
 
-        if (empty($GLOBALS['TL_HEAD']['lottie-player-script'])) {
+        if (empty($GLOBALS['TL_HEAD'][$playerType.'-player-script'])) {
             $script = Template::generateScriptTag('bundles/contaolottieplayer/'.$playerType.'-player.js', true, null);
             $script = str_replace('<script', '<script id="'.$playerType.'-player-script"', $script);
             $GLOBALS['TL_HEAD'][$playerType.'-player-script'] = $script;
