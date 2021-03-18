@@ -1,0 +1,28 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+  <<?= $this->playerType ?>-player id="lottie-player-<?= $this->id ?>" <?php foreach ($this->lottie_options as $option): ?><?= $option ?> <?php endforeach ?>src="<?= $this->singleSRC ?>"<?= $this->playerStyle ?>></<?= $this->playerType ?>-player>
+  <script>
+    (function(){
+      'use strict';
+      document.getElementById('lottie-player-script').addEventListener('load', function() {
+        const player = document.getElementById('lottie-player-<?= $this->id ?>');
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+        const checkViewport = function() {
+          const bounding = player.getBoundingClientRect();
+
+          if (bounding.top + bounding.height * 0.333 < windowHeight) {
+            player.play();
+            return;
+          }
+
+          window.requestAnimationFrame(checkViewport);        
+        };
+        checkViewport();
+      });
+    })();
+  </script>
+
+<?php $this->endblock(); ?>
