@@ -18,6 +18,7 @@ use Contao\CoreBundle\ServiceAnnotation\ContentElement;
 use Contao\FilesModel;
 use Contao\StringUtil;
 use Contao\Template;
+use InspiredMinds\ContaoLottiePlayer\LottiePlayerHelper;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Webmozart\PathUtil\Path;
@@ -29,10 +30,12 @@ class LottiePlayerController extends AbstractContentElementController
 {
     public const TYPE = 'lottie_player';
 
+    private $helper;
     private $projectDir;
 
-    public function __construct(string $projectDir)
+    public function __construct(LottiePlayerHelper $helper, string $projectDir)
     {
+        $this->helper = $helper;
         $this->projectDir = $projectDir;
     }
 
@@ -59,11 +62,7 @@ class LottiePlayerController extends AbstractContentElementController
         $template->singleSRC = '/'.$file->path;
         $template->lottie_options = StringUtil::deserialize($model->lottie_options, true);
 
-        if (empty($GLOBALS['TL_HEAD'][$playerType.'-player-script'])) {
-            $script = Template::generateScriptTag('bundles/contaolottieplayer/'.$playerType.'-player.js', true, null);
-            $script = str_replace('<script', '<script id="'.$playerType.'-player-script"', $script);
-            $GLOBALS['TL_HEAD'][$playerType.'-player-script'] = $script;
-        }
+        $this->helper->addScript($playerType);
 
         return new Response($template->parse());
     }
