@@ -8,6 +8,3 @@ services:
     InspiredMinds\ContaoLottiePlayer\:
         resource: ../../
         exclude: ../../{ContaoManager,Model,DependencyInjection,Resources}
-
-    InspiredMinds\ContaoLottiePlayer\LottiePlayerHelper:
-        public: true
