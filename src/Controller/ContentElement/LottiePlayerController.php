@@ -39,7 +39,7 @@ class LottiePlayerController extends AbstractContentElementController
         $this->projectDir = $projectDir;
     }
 
-    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
         if (empty($model->singleSRC)) {
             return new Response();
