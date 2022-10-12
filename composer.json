@@ -40,6 +40,6 @@
         "contao-manager-plugin": "InspiredMinds\\ContaoLottiePlayer\\ContaoManager\\Plugin"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.16"
+        "friendsofphp/php-cs-fixer": "^2.16 || ^3.0"
     }
 }
