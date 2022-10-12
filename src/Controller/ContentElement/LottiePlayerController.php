@@ -64,6 +64,6 @@ class LottiePlayerController extends AbstractContentElementController
 
         $this->helper->addScript($playerType);
 
-        return new Response($template->parse());
+        return $template->getResponse();
     }
 }
