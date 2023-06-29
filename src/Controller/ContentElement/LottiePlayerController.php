@@ -24,7 +24,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Webmozart\PathUtil\Path;
 
 /**
- * @ContentElement(LottiePlayerController::TYPE, category="media")
+ * @ContentElement(LottiePlayerController::TYPE, category="media", template="ce_lottie_player")
  */
 class LottiePlayerController extends AbstractContentElementController
 {
